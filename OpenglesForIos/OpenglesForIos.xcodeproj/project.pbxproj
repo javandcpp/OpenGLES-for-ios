@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF7A544123669D8900F560A8 /* OpenglesForIos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF7A543F23669D8900F560A8 /* OpenglesForIos.xcdatamodeld */; };
+		DF7A544323669D8A00F560A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A544223669D8A00F560A8 /* Assets.xcassets */; };
+		DF7A544923669D8A00F560A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A544823669D8A00F560A8 /* main.m */; };
+		DF7A545323669D8A00F560A8 /* OpenglesForIosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A545223669D8A00F560A8 /* OpenglesForIosTests.m */; };
+		DF7A545E23669D8A00F560A8 /* OpenglesForIosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A545D23669D8A00F560A8 /* OpenglesForIosUITests.m */; };
+		DF7A54712366A38E00F560A8 /* include in Resources */ = {isa = PBXBuildFile; fileRef = DF7A546F2366A38E00F560A8 /* include */; };
+		DF7A54722366A38E00F560A8 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = DF7A54702366A38E00F560A8 /* lib */; };
+		DF8E156A2366CBAA00CF305C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E15692366CBAA00CF305C /* MediaPlayer.framework */; };
+		DF8E156B2366CBB300CF305C /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDE32366CA67001351F1 /* VideoToolbox.framework */; };
+		DF8E156C2366CC8D00CF305C /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDCB2366C43C001351F1 /* libcrypto.a */; };
+		DF8E156D2366CC8D00CF305C /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDCA2366C43C001351F1 /* libssl.a */; };
+		DF8E15702366CD0900CF305C /* FFmpegDemux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF8E156E2366CD0900CF305C /* FFmpegDemux.cpp */; };
+		DF8E15752366CD8800CF305C /* MediaInit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF8E15712366CD8700CF305C /* MediaInit.cpp */; };
+		DF8E15762366CD8800CF305C /* FFmpegVideoDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF8E15732366CD8800CF305C /* FFmpegVideoDecode.cpp */; };
+		DF8E15792366CDD200CF305C /* FFmpegAudioDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF8E15782366CDD200CF305C /* FFmpegAudioDecode.cpp */; };
+		DF8E157C2366CF5A00CF305C /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8E157B2366CF5A00CF305C /* OpenglView.m */; };
+		DF8E15802366D3FB00CF305C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDD72366C448001351F1 /* AVFoundation.framework */; };
+		DF8E15822366D40900CF305C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E15812366D40900CF305C /* UIKit.framework */; };
+		DF8E15832366D4BC00CF305C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E157E2366D0F200CF305C /* OpenGLES.framework */; };
+		DF8E15852366D4BC00CF305C /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E15842366D4BC00CF305C /* OpenAL.framework */; };
+		DF8E15872366D4CB00CF305C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E15862366D4CB00CF305C /* CoreGraphics.framework */; };
+		DF8E15892366D4F600CF305C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E15882366D4F600CF305C /* QuartzCore.framework */; };
+		DF8E158C2366D5B800CF305C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8E158B2366D5B800CF305C /* ViewController.m */; };
+		DF8E15902366D78100CF305C /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8E158F2366D78100CF305C /* View.xib */; };
+		DF8E15DD2366DA4900CF305C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8E15DC2366DA4900CF305C /* AppDelegate.m */; };
+		DF8E15E02366DA7500CF305C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8E15DE2366DA7500CF305C /* Main.storyboard */; };
+		DF8E15E22366DA9E00CF305C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8E15E12366DA9E00CF305C /* CoreData.framework */; };
+		DF8E15E52366DB0200CF305C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8E15E32366DB0200CF305C /* LaunchScreen.storyboard */; };
+		DFDABDDA2366C453001351F1 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDD92366C453001351F1 /* CoreMedia.framework */; };
+		DFDABDDB2366CA08001351F1 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDCE2366C43C001351F1 /* libavcodec.a */; };
+		DFDABDDC2366CA08001351F1 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDC72366C43C001351F1 /* libavfilter.a */; };
+		DFDABDDD2366CA08001351F1 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDCD2366C43C001351F1 /* libavformat.a */; };
+		DFDABDDE2366CA08001351F1 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDCC2366C43C001351F1 /* libavutil.a */; };
+		DFDABDDF2366CA08001351F1 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDC82366C43C001351F1 /* libswresample.a */; };
+		DFDABDE02366CA08001351F1 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDC92366C43C001351F1 /* libswscale.a */; };
+		DFDABDE82366CAE8001351F1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDE72366CAE8001351F1 /* libiconv.tbd */; };
+		DFDABDEA2366CB2C001351F1 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDE92366CB2C001351F1 /* libbz2.tbd */; };
+		DFDABDEC2366CB3B001351F1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DFDABDEB2366CB3B001351F1 /* libz.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF7A544F23669D8A00F560A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF7A542B23669D8800F560A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF7A543223669D8800F560A8;
+			remoteInfo = OpenglesForIos;
+		};
+		DF7A545A23669D8A00F560A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF7A542B23669D8800F560A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF7A543223669D8800F560A8;
+			remoteInfo = OpenglesForIos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DF7A543323669D8800F560A8 /* OpenglesForIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenglesForIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7A544023669D8900F560A8 /* OpenglesForIos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenglesForIos.xcdatamodel; sourceTree = "<group>"; };
+		DF7A544223669D8A00F560A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF7A544723669D8A00F560A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7A544823669D8A00F560A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DF7A544E23669D8A00F560A8 /* OpenglesForIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenglesForIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7A545223669D8A00F560A8 /* OpenglesForIosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenglesForIosTests.m; sourceTree = "<group>"; };
+		DF7A545423669D8A00F560A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7A545923669D8A00F560A8 /* OpenglesForIosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenglesForIosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7A545D23669D8A00F560A8 /* OpenglesForIosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenglesForIosUITests.m; sourceTree = "<group>"; };
+		DF7A545F23669D8A00F560A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF7A546F2366A38E00F560A8 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
+		DF7A54702366A38E00F560A8 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
+		DF7A547A2366B7E600F560A8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		DF8E15692366CBAA00CF305C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DF8E156E2366CD0900CF305C /* FFmpegDemux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFmpegDemux.cpp; sourceTree = "<group>"; };
+		DF8E156F2366CD0900CF305C /* FFmpegDemux.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FFmpegDemux.hpp; sourceTree = "<group>"; };
+		DF8E15712366CD8700CF305C /* MediaInit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MediaInit.cpp; sourceTree = "<group>"; };
+		DF8E15722366CD8700CF305C /* MediaInit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MediaInit.hpp; sourceTree = "<group>"; };
+		DF8E15732366CD8800CF305C /* FFmpegVideoDecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFmpegVideoDecode.cpp; sourceTree = "<group>"; };
+		DF8E15742366CD8800CF305C /* FFmpegVideoDecode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FFmpegVideoDecode.hpp; sourceTree = "<group>"; };
+		DF8E15772366CDD200CF305C /* FFmpegAudioDecode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FFmpegAudioDecode.hpp; sourceTree = "<group>"; };
+		DF8E15782366CDD200CF305C /* FFmpegAudioDecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FFmpegAudioDecode.cpp; sourceTree = "<group>"; };
+		DF8E157A2366CF5A00CF305C /* OpenglView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
+		DF8E157B2366CF5A00CF305C /* OpenglView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenglView.m; sourceTree = "<group>"; };
+		DF8E157D2366D02000CF305C /* H264Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H264Frame.h; sourceTree = "<group>"; };
+		DF8E157E2366D0F200CF305C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DF8E15812366D40900CF305C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DF8E15842366D4BC00CF305C /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		DF8E15862366D4CB00CF305C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DF8E15882366D4F600CF305C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DF8E158A2366D5B800CF305C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DF8E158B2366D5B800CF305C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DF8E158F2366D78100CF305C /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		DF8E15DB2366DA4900CF305C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DF8E15DC2366DA4900CF305C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DF8E15DF2366DA7500CF305C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF8E15E12366DA9E00CF305C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DF8E15E42366DB0200CF305C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DFDABDC72366C43C001351F1 /* libavfilter.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavfilter.a; path = OpenglesForIos/lib/libavfilter.a; sourceTree = "<group>"; };
+		DFDABDC82366C43C001351F1 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = OpenglesForIos/lib/libswresample.a; sourceTree = "<group>"; };
+		DFDABDC92366C43C001351F1 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = OpenglesForIos/lib/libswscale.a; sourceTree = "<group>"; };
+		DFDABDCA2366C43C001351F1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = OpenglesForIos/lib/libssl.a; sourceTree = "<group>"; };
+		DFDABDCB2366C43C001351F1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = OpenglesForIos/lib/libcrypto.a; sourceTree = "<group>"; };
+		DFDABDCC2366C43C001351F1 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = OpenglesForIos/lib/libavutil.a; sourceTree = "<group>"; };
+		DFDABDCD2366C43C001351F1 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = OpenglesForIos/lib/libavformat.a; sourceTree = "<group>"; };
+		DFDABDCE2366C43C001351F1 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = OpenglesForIos/lib/libavcodec.a; sourceTree = "<group>"; };
+		DFDABDD72366C448001351F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DFDABDD92366C453001351F1 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DFDABDE12366CA09001351F1 /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavdevice.a; path = OpenglesForIos/lib/libavdevice.a; sourceTree = "<group>"; };
+		DFDABDE32366CA67001351F1 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		DFDABDE52366CA99001351F1 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
+		DFDABDE72366CAE8001351F1 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		DFDABDE92366CB2C001351F1 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		DFDABDEB2366CB3B001351F1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF7A543023669D8800F560A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF8E15E22366DA9E00CF305C /* CoreData.framework in Frameworks */,
+				DF8E15892366D4F600CF305C /* QuartzCore.framework in Frameworks */,
+				DF8E15872366D4CB00CF305C /* CoreGraphics.framework in Frameworks */,
+				DF8E15852366D4BC00CF305C /* OpenAL.framework in Frameworks */,
+				DF8E15832366D4BC00CF305C /* OpenGLES.framework in Frameworks */,
+				DF8E15822366D40900CF305C /* UIKit.framework in Frameworks */,
+				DF8E15802366D3FB00CF305C /* AVFoundation.framework in Frameworks */,
+				DFDABDDB2366CA08001351F1 /* libavcodec.a in Frameworks */,
+				DFDABDDC2366CA08001351F1 /* libavfilter.a in Frameworks */,
+				DFDABDDD2366CA08001351F1 /* libavformat.a in Frameworks */,
+				DFDABDDE2366CA08001351F1 /* libavutil.a in Frameworks */,
+				DF8E156C2366CC8D00CF305C /* libcrypto.a in Frameworks */,
+				DF8E156D2366CC8D00CF305C /* libssl.a in Frameworks */,
+				DFDABDDF2366CA08001351F1 /* libswresample.a in Frameworks */,
+				DFDABDE02366CA08001351F1 /* libswscale.a in Frameworks */,
+				DF8E156B2366CBB300CF305C /* VideoToolbox.framework in Frameworks */,
+				DF8E156A2366CBAA00CF305C /* MediaPlayer.framework in Frameworks */,
+				DFDABDEC2366CB3B001351F1 /* libz.tbd in Frameworks */,
+				DFDABDEA2366CB2C001351F1 /* libbz2.tbd in Frameworks */,
+				DFDABDE82366CAE8001351F1 /* libiconv.tbd in Frameworks */,
+				DFDABDDA2366C453001351F1 /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF7A544B23669D8A00F560A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF7A545623669D8A00F560A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF7A542A23669D8800F560A8 = {
+			isa = PBXGroup;
+			children = (
+				DF7A543523669D8800F560A8 /* OpenglesForIos */,
+				DF7A545123669D8A00F560A8 /* OpenglesForIosTests */,
+				DF7A545C23669D8A00F560A8 /* OpenglesForIosUITests */,
+				DF7A543423669D8800F560A8 /* Products */,
+				DF7A54792366B7E600F560A8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DF7A543423669D8800F560A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF7A543323669D8800F560A8 /* OpenglesForIos.app */,
+				DF7A544E23669D8A00F560A8 /* OpenglesForIosTests.xctest */,
+				DF7A545923669D8A00F560A8 /* OpenglesForIosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF7A543523669D8800F560A8 /* OpenglesForIos */ = {
+			isa = PBXGroup;
+			children = (
+				DF8E15E32366DB0200CF305C /* LaunchScreen.storyboard */,
+				DF8E15DE2366DA7500CF305C /* Main.storyboard */,
+				DF8E15DB2366DA4900CF305C /* AppDelegate.h */,
+				DF8E15DC2366DA4900CF305C /* AppDelegate.m */,
+				DF8E15782366CDD200CF305C /* FFmpegAudioDecode.cpp */,
+				DF8E15772366CDD200CF305C /* FFmpegAudioDecode.hpp */,
+				DF8E15732366CD8800CF305C /* FFmpegVideoDecode.cpp */,
+				DF8E15742366CD8800CF305C /* FFmpegVideoDecode.hpp */,
+				DF8E15712366CD8700CF305C /* MediaInit.cpp */,
+				DF8E15722366CD8700CF305C /* MediaInit.hpp */,
+				DF8E156E2366CD0900CF305C /* FFmpegDemux.cpp */,
+				DF8E156F2366CD0900CF305C /* FFmpegDemux.hpp */,
+				DF7A546F2366A38E00F560A8 /* include */,
+				DF7A54702366A38E00F560A8 /* lib */,
+				DF7A544223669D8A00F560A8 /* Assets.xcassets */,
+				DF7A544723669D8A00F560A8 /* Info.plist */,
+				DF7A544823669D8A00F560A8 /* main.m */,
+				DF7A543F23669D8900F560A8 /* OpenglesForIos.xcdatamodeld */,
+				DF8E157A2366CF5A00CF305C /* OpenglView.h */,
+				DF8E157B2366CF5A00CF305C /* OpenglView.m */,
+				DF8E157D2366D02000CF305C /* H264Frame.h */,
+				DF8E158A2366D5B800CF305C /* ViewController.h */,
+				DF8E158B2366D5B800CF305C /* ViewController.m */,
+				DF8E158F2366D78100CF305C /* View.xib */,
+			);
+			path = OpenglesForIos;
+			sourceTree = "<group>";
+		};
+		DF7A545123669D8A00F560A8 /* OpenglesForIosTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF7A545223669D8A00F560A8 /* OpenglesForIosTests.m */,
+				DF7A545423669D8A00F560A8 /* Info.plist */,
+			);
+			path = OpenglesForIosTests;
+			sourceTree = "<group>";
+		};
+		DF7A545C23669D8A00F560A8 /* OpenglesForIosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DF7A545D23669D8A00F560A8 /* OpenglesForIosUITests.m */,
+				DF7A545F23669D8A00F560A8 /* Info.plist */,
+			);
+			path = OpenglesForIosUITests;
+			sourceTree = "<group>";
+		};
+		DF7A54792366B7E600F560A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF8E15E12366DA9E00CF305C /* CoreData.framework */,
+				DF8E15882366D4F600CF305C /* QuartzCore.framework */,
+				DF8E15862366D4CB00CF305C /* CoreGraphics.framework */,
+				DF8E15842366D4BC00CF305C /* OpenAL.framework */,
+				DF8E15812366D40900CF305C /* UIKit.framework */,
+				DF8E157E2366D0F200CF305C /* OpenGLES.framework */,
+				DF8E15692366CBAA00CF305C /* MediaPlayer.framework */,
+				DFDABDEB2366CB3B001351F1 /* libz.tbd */,
+				DFDABDE92366CB2C001351F1 /* libbz2.tbd */,
+				DFDABDE72366CAE8001351F1 /* libiconv.tbd */,
+				DFDABDE52366CA99001351F1 /* MediaToolbox.framework */,
+				DFDABDE32366CA67001351F1 /* VideoToolbox.framework */,
+				DFDABDE12366CA09001351F1 /* libavdevice.a */,
+				DFDABDD92366C453001351F1 /* CoreMedia.framework */,
+				DFDABDD72366C448001351F1 /* AVFoundation.framework */,
+				DFDABDCE2366C43C001351F1 /* libavcodec.a */,
+				DFDABDC72366C43C001351F1 /* libavfilter.a */,
+				DFDABDCD2366C43C001351F1 /* libavformat.a */,
+				DFDABDCC2366C43C001351F1 /* libavutil.a */,
+				DFDABDCB2366C43C001351F1 /* libcrypto.a */,
+				DFDABDCA2366C43C001351F1 /* libssl.a */,
+				DFDABDC82366C43C001351F1 /* libswresample.a */,
+				DFDABDC92366C43C001351F1 /* libswscale.a */,
+				DF7A547A2366B7E600F560A8 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF7A543223669D8800F560A8 /* OpenglesForIos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF7A546223669D8A00F560A8 /* Build configuration list for PBXNativeTarget "OpenglesForIos" */;
+			buildPhases = (
+				DF7A542F23669D8800F560A8 /* Sources */,
+				DF7A543023669D8800F560A8 /* Frameworks */,
+				DF7A543123669D8800F560A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenglesForIos;
+			productName = OpenglesForIos;
+			productReference = DF7A543323669D8800F560A8 /* OpenglesForIos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DF7A544D23669D8A00F560A8 /* OpenglesForIosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF7A546523669D8A00F560A8 /* Build configuration list for PBXNativeTarget "OpenglesForIosTests" */;
+			buildPhases = (
+				DF7A544A23669D8A00F560A8 /* Sources */,
+				DF7A544B23669D8A00F560A8 /* Frameworks */,
+				DF7A544C23669D8A00F560A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF7A545023669D8A00F560A8 /* PBXTargetDependency */,
+			);
+			name = OpenglesForIosTests;
+			productName = OpenglesForIosTests;
+			productReference = DF7A544E23669D8A00F560A8 /* OpenglesForIosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DF7A545823669D8A00F560A8 /* OpenglesForIosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF7A546823669D8A00F560A8 /* Build configuration list for PBXNativeTarget "OpenglesForIosUITests" */;
+			buildPhases = (
+				DF7A545523669D8A00F560A8 /* Sources */,
+				DF7A545623669D8A00F560A8 /* Frameworks */,
+				DF7A545723669D8A00F560A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF7A545B23669D8A00F560A8 /* PBXTargetDependency */,
+			);
+			name = OpenglesForIosUITests;
+			productName = OpenglesForIosUITests;
+			productReference = DF7A545923669D8A00F560A8 /* OpenglesForIosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF7A542B23669D8800F560A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = developer;
+				TargetAttributes = {
+					DF7A543223669D8800F560A8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DF7A544D23669D8A00F560A8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DF7A543223669D8800F560A8;
+					};
+					DF7A545823669D8A00F560A8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DF7A543223669D8800F560A8;
+					};
+				};
+			};
+			buildConfigurationList = DF7A542E23669D8800F560A8 /* Build configuration list for PBXProject "OpenglesForIos" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF7A542A23669D8800F560A8;
+			productRefGroup = DF7A543423669D8800F560A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF7A543223669D8800F560A8 /* OpenglesForIos */,
+				DF7A544D23669D8A00F560A8 /* OpenglesForIosTests */,
+				DF7A545823669D8A00F560A8 /* OpenglesForIosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF7A543123669D8800F560A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF7A54722366A38E00F560A8 /* lib in Resources */,
+				DF8E15E02366DA7500CF305C /* Main.storyboard in Resources */,
+				DF8E15902366D78100CF305C /* View.xib in Resources */,
+				DF8E15E52366DB0200CF305C /* LaunchScreen.storyboard in Resources */,
+				DF7A544323669D8A00F560A8 /* Assets.xcassets in Resources */,
+				DF7A54712366A38E00F560A8 /* include in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF7A544C23669D8A00F560A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF7A545723669D8A00F560A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF7A542F23669D8800F560A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF8E15702366CD0900CF305C /* FFmpegDemux.cpp in Sources */,
+				DF8E15792366CDD200CF305C /* FFmpegAudioDecode.cpp in Sources */,
+				DF8E15DD2366DA4900CF305C /* AppDelegate.m in Sources */,
+				DF7A544923669D8A00F560A8 /* main.m in Sources */,
+				DF8E158C2366D5B800CF305C /* ViewController.m in Sources */,
+				DF8E15752366CD8800CF305C /* MediaInit.cpp in Sources */,
+				DF8E157C2366CF5A00CF305C /* OpenglView.m in Sources */,
+				DF8E15762366CD8800CF305C /* FFmpegVideoDecode.cpp in Sources */,
+				DF7A544123669D8900F560A8 /* OpenglesForIos.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF7A544A23669D8A00F560A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF7A545323669D8A00F560A8 /* OpenglesForIosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF7A545523669D8A00F560A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF7A545E23669D8A00F560A8 /* OpenglesForIosUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF7A545023669D8A00F560A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF7A543223669D8800F560A8 /* OpenglesForIos */;
+			targetProxy = DF7A544F23669D8A00F560A8 /* PBXContainerItemProxy */;
+		};
+		DF7A545B23669D8A00F560A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF7A543223669D8800F560A8 /* OpenglesForIos */;
+			targetProxy = DF7A545A23669D8A00F560A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF8E15DE2366DA7500CF305C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF8E15DF2366DA7500CF305C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF8E15E32366DB0200CF305C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF8E15E42366DB0200CF305C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF7A546023669D8A00F560A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DF7A546123669D8A00F560A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF7A546323669D8A00F560A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F3G95KJ85;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/OpenglesForIos/lib";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/OpenglesForIos/media",
+					"$(PROJECT_DIR)/OpenglesForIos/include",
+				);
+				INFOPLIST_FILE = OpenglesForIos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenglesForIos/lib",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stone.OpenglesForIos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		DF7A546423669D8A00F560A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F3G95KJ85;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/OpenglesForIos/lib";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/OpenglesForIos/media",
+					"$(PROJECT_DIR)/OpenglesForIos/include",
+				);
+				INFOPLIST_FILE = OpenglesForIos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OpenglesForIos/lib",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lstdc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stone.OpenglesForIos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		DF7A546623669D8A00F560A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F3G95KJ85;
+				INFOPLIST_FILE = OpenglesForIosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stone.OpenglesForIosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenglesForIos.app/OpenglesForIos";
+			};
+			name = Debug;
+		};
+		DF7A546723669D8A00F560A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F3G95KJ85;
+				INFOPLIST_FILE = OpenglesForIosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stone.OpenglesForIosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenglesForIos.app/OpenglesForIos";
+			};
+			name = Release;
+		};
+		DF7A546923669D8A00F560A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F3G95KJ85;
+				INFOPLIST_FILE = OpenglesForIosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stone.OpenglesForIosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenglesForIos;
+			};
+			name = Debug;
+		};
+		DF7A546A23669D8A00F560A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F3G95KJ85;
+				INFOPLIST_FILE = OpenglesForIosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stone.OpenglesForIosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenglesForIos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF7A542E23669D8800F560A8 /* Build configuration list for PBXProject "OpenglesForIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7A546023669D8A00F560A8 /* Debug */,
+				DF7A546123669D8A00F560A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF7A546223669D8A00F560A8 /* Build configuration list for PBXNativeTarget "OpenglesForIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7A546323669D8A00F560A8 /* Debug */,
+				DF7A546423669D8A00F560A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF7A546523669D8A00F560A8 /* Build configuration list for PBXNativeTarget "OpenglesForIosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7A546623669D8A00F560A8 /* Debug */,
+				DF7A546723669D8A00F560A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF7A546823669D8A00F560A8 /* Build configuration list for PBXNativeTarget "OpenglesForIosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF7A546923669D8A00F560A8 /* Debug */,
+				DF7A546A23669D8A00F560A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF7A543F23669D8900F560A8 /* OpenglesForIos.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF7A544023669D8900F560A8 /* OpenglesForIos.xcdatamodel */,
+			);
+			currentVersion = DF7A544023669D8900F560A8 /* OpenglesForIos.xcdatamodel */;
+			path = OpenglesForIos.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DF7A542B23669D8800F560A8 /* Project object */;
+}
