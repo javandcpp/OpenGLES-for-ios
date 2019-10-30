@@ -560,10 +560,7 @@ TexCoordOut = TexCoordIn;\
         
         [self render];
         
-        free(frame->luma.dataBuffer);
-        free(frame->chromaR.dataBuffer);
-        free(frame->chromaB.dataBuffer);
-        free(frame);
+    
     }
     
 #ifdef DEBUG

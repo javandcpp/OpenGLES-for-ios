@@ -50,7 +50,7 @@
     //    openglRender->openglInit();
     //
     //    ffmpegVideoDecode->addOpenglVideoRender(openglRender);
-    
+//    https://cdn.kaishuhezi.com/kstory/microcourse/video/c09784ce-b35e-4c1d-a64d-bed13b345673.mp4
     ffmpegDemux->start("https://cdn.kaishuhezi.com/kstory/microcourse/video/c09784ce-b35e-4c1d-a64d-bed13b345673.mp4");
     //    openglRender->start();
     

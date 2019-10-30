@@ -103,7 +103,10 @@ void FFmpegVideoDecode::decode(AVPacket avPacket){
     
     av_frame_unref(avFrame);
 //    av_frame_free(&avFrame);
-    
+    free(frame->luma.dataBuffer);
+    free(frame->chromaR.dataBuffer);
+    free(frame->chromaB.dataBuffer);
+    free(frame);
 
 }
 

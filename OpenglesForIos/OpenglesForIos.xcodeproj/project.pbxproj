@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF26CEB323692F4800455B30 /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF26CEB223692F4800455B30 /* libopus.a */; };
 		DF7A544123669D8900F560A8 /* OpenglesForIos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF7A543F23669D8900F560A8 /* OpenglesForIos.xcdatamodeld */; };
 		DF7A544323669D8A00F560A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A544223669D8A00F560A8 /* Assets.xcassets */; };
 		DF7A544923669D8A00F560A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A544823669D8A00F560A8 /* main.m */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF26CEB223692F4800455B30 /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = OpenglesForIos/lib/libopus.a; sourceTree = "<group>"; };
 		DF7A543323669D8800F560A8 /* OpenglesForIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenglesForIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A544023669D8900F560A8 /* OpenglesForIos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenglesForIos.xcdatamodel; sourceTree = "<group>"; };
 		DF7A544223669D8A00F560A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF26CEB323692F4800455B30 /* libopus.a in Frameworks */,
 				DF8E15E22366DA9E00CF305C /* CoreData.framework in Frameworks */,
 				DF8E15892366D4F600CF305C /* QuartzCore.framework in Frameworks */,
 				DF8E15872366D4CB00CF305C /* CoreGraphics.framework in Frameworks */,
@@ -241,6 +244,7 @@
 		DF7A54792366B7E600F560A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF26CEB223692F4800455B30 /* libopus.a */,
 				DF8E15E12366DA9E00CF305C /* CoreData.framework */,
 				DF8E15882366D4F600CF305C /* QuartzCore.framework */,
 				DF8E15862366D4CB00CF305C /* CoreGraphics.framework */,

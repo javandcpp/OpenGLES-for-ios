@@ -15,9 +15,32 @@ extern "C"{
 }
 
 #endif
+FFmpegAudioDecode::FFmpegAudioDecode(){
+    avFrame=av_frame_alloc();
+}
+
+FFmpegAudioDecode::~FFmpegAudioDecode(){
+    
+    
+    if (avFrame) {
+        av_frame_free(&avFrame);
+    }
+}
+
+
 void FFmpegAudioDecode::decode(AVPacket avPacket){
     
     printf("decode audio stream index=%d \n",avPacket.stream_index);
+    
+     int got_frame=0;
+    int ret=avcodec_decode_audio4(avCodecContext, avFrame, &got_frame, &avPacket);
+    if (ret<0) {
+        printf("avcodec_decode_audio4 error! \n");
+    }
+
+    if (got_frame) {
+        printf("avcodec_decode_audio4 decode :%d  size:%d\n",got_frame,avFrame->pkt_size);
+    }
 }
 
 

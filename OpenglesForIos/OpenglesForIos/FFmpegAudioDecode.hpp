@@ -26,11 +26,17 @@ struct AVPacket;
 class FFmpegAudioDecode{
     
 public:
+    FFmpegAudioDecode();
+    
+    virtual ~FFmpegAudioDecode();
+    
     void decode(AVPacket avpacket);
     
     AVCodecContext *avCodecContext=nullptr;
     
     void setAVCodecContext(AVCodecContext *avcodecContext);
+    
+    AVFrame *avFrame=nullptr;
     
 };
 

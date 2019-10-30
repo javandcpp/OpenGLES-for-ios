@@ -63,6 +63,9 @@ void ffmpegDemux(const void* obj){
     
     ffmpegDemux->audioStreamIdx=asIndex;
     ffmpegDemux->videoStreamIdx=vsIndex;
+    
+    AVStream *videoStream=nullptr;
+    AVStream *audioStream=nullptr;
     if(asIndex>=0){
         AVCodec* audioCodec=avcodec_find_decoder(avFormatCtx->streams[asIndex]->codecpar->codec_id);
        ffmpegDemux->audioCodecContext=avcodec_alloc_context3(audioCodec);
@@ -72,7 +75,7 @@ void ffmpegDemux(const void* obj){
             return;
         }
          ffmpegDemux->ffmpegAudioDecode->setAVCodecContext(ffmpegDemux->audioCodecContext);
-        
+         audioStream=avFormatCtx->streams[asIndex];
     }
     
     if(vsIndex>=0){
@@ -84,18 +87,29 @@ void ffmpegDemux(const void* obj){
             return;
         }
         ffmpegDemux->ffmpegVideoDecode->setAVCodecContext(ffmpegDemux->videoCodecContext);
+        videoStream=avFormatCtx->streams[vsIndex];
     }
     
-    AVStream *audioStream=avFormatCtx->streams[asIndex];
-    AVStream *videoStream=avFormatCtx->streams[vsIndex];
-    if(!(audioStream&&videoStream)){
+  
+    
+  
+    if(!audioStream&&!videoStream){
         av_log(NULL, AV_LOG_WARNING, "audiostream or videostream is NULL");
         return;
     }
-    AVCodec *audioCodec=avcodec_find_decoder(audioStream->codecpar->codec_id);
-    AVCodec *videoCodec=avcodec_find_decoder(videoStream->codecpar->codec_id);
     
-    if(!(audioCodec&&videoCodec)){
+    AVCodec *audioCodec=nullptr;
+    AVCodec *videoCodec=nullptr;
+    if (audioStream) {
+         audioCodec=avcodec_find_decoder(audioStream->codecpar->codec_id);
+    }
+   
+    if (videoStream) {
+         videoCodec=avcodec_find_decoder(videoStream->codecpar->codec_id);
+    }
+   
+    
+    if(!audioCodec&&!videoCodec){
         
         av_log(NULL, AV_LOG_WARNING, "AudioCodec or VideoCodec is NULL");
         return;
