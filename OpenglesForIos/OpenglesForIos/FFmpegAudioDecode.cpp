@@ -7,7 +7,7 @@
 //
 
 #include "FFmpegAudioDecode.hpp"
-
+#import <UIKit/UIKit.h>
 #ifdef __cplusplus
 
 extern "C"{
@@ -17,6 +17,11 @@ extern "C"{
 #endif
 FFmpegAudioDecode::FFmpegAudioDecode(){
     avFrame=av_frame_alloc();
+    NSString *path=[[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/file.pcm"];
+    file=fopen([path UTF8String], "wb+");
+    
+    NSLog(@"path:%@",path);
+
 }
 
 FFmpegAudioDecode::~FFmpegAudioDecode(){
@@ -24,6 +29,10 @@ FFmpegAudioDecode::~FFmpegAudioDecode(){
     
     if (avFrame) {
         av_frame_free(&avFrame);
+    }
+    
+    if (file) {
+        fclose(file);
     }
 }
 
@@ -41,6 +50,55 @@ void FFmpegAudioDecode::decode(AVPacket avPacket){
     if (got_frame) {
         printf("avcodec_decode_audio4 decode :%d  size:%d\n",got_frame,avFrame->pkt_size);
     }
+    
+    if(NULL == avFrame)
+    {
+      
+        printf("avFrame is null \n");
+        return;
+    }
+    int  t_data_size = av_samples_get_buffer_size(
+                                                  NULL, avFrame->channels,
+                                                  avFrame->nb_samples,
+                                                  (AVSampleFormat)avFrame->format,
+                                                  0);
+    if(t_data_size < 0)
+    {
+        printf("av_samples_get_buffer_size: %d \n",t_data_size);
+        return;
+    }
+    if(av_sample_fmt_is_planar((AVSampleFormat)avFrame->format))
+    {//如果是平面的
+    
+        
+        int outsize =avFrame->nb_samples * av_get_bytes_per_sample((AVSampleFormat) audioResample->outputFormat)*audioResample->outChannels;
+        uint8_t *outArr[2] = {0};
+        int linesize=0;
+        av_samples_alloc(outArr, &linesize, audioResample->outChannels,avFrame->nb_samples, (enum AVSampleFormat)audioResample->outputFormat, 1);
+        
+        struct SwrContext * swrCtx=audioResample->getSwrContext();
+       
+        int len=swr_convert(swrCtx,(uint8_t **)outArr, avFrame->nb_samples, (const uint8_t **)avFrame->data, avFrame->nb_samples);
+        
+        printf("%d \n",len);
+        if (len<=0) {
+            return;
+        }
+//
+//        fwrite(outArr[0], outsize, 1,file);
+//        fflush(file);
+        
+        
+//        memset(outArr[0], 0, outsize);
+//        free(outArr[0]);
+    }
+    else
+    {
+        printf("not planar data\n");
+//        outPcmFilePtr->write((const char *)inFrame->data[0],t_data_size);
+//        outPcmFilePtr->flush();
+    }
+  
 }
 
 
@@ -53,4 +111,8 @@ void FFmpegAudioDecode::setAVCodecContext(AVCodecContext *avcodecContext){
     }
 }
 
+
+void FFmpegAudioDecode::addAudioResample(AudioResample *audioResample){
+    this->audioResample=audioResample;
+}
 

@@ -10,10 +10,12 @@
 
 FFmpegVideoDecode::FFmpegVideoDecode(){
     
-    file=fopen("file.yuv", "wb+");
+    NSString *path=[[[NSBundle mainBundle] bundlePath] stringByAppendingString:@"/file.yuv"];
+    file=fopen([path UTF8String], "wb+");
     avFrame=av_frame_alloc();
     
     openglView=[[OpenglView alloc] init];
+    
    
 }
 
@@ -46,7 +48,7 @@ void FFmpegVideoDecode::decode(AVPacket avPacket){
         printf("avcodec_decode_video2 decode :%d  width:%d height:%d\n",got_picture,avFrame->width,avFrame->height);
     }
    
-     H264YUV_Frame *frame=(H264YUV_Frame*)malloc(sizeof(H264YUV_Frame));
+    H264YUV_Frame *frame=(H264YUV_Frame*)malloc(sizeof(H264YUV_Frame));
     switch (avFrame->format) {
         case AV_PIX_FMT_YUV420P:
             printf("AV_PIX_FMT_YUV420P \n");
@@ -62,7 +64,7 @@ void FFmpegVideoDecode::decode(AVPacket avPacket){
 //
               dstFrame=av_frame_alloc();
 //            av_frame_ref(dstFrame, avFrame);
-            
+//
               av_frame_move_ref(dstFrame, avFrame);
            
             memset(frame, 0, sizeof(H264YUV_Frame));
@@ -102,11 +104,24 @@ void FFmpegVideoDecode::decode(AVPacket avPacket){
     }
     
     av_frame_unref(avFrame);
-//    av_frame_free(&avFrame);
-    free(frame->luma.dataBuffer);
-    free(frame->chromaR.dataBuffer);
-    free(frame->chromaB.dataBuffer);
-    free(frame);
+    av_frame_free(&dstFrame);
+    if(frame->luma.dataBuffer){
+        free(frame->luma.dataBuffer);
+        frame->luma.dataBuffer=NULL;
+    }
+    if(frame->chromaR.dataBuffer){
+        free(frame->chromaR.dataBuffer);
+        frame->chromaR.dataBuffer=NULL;
+    }
+    if (frame->chromaB.dataBuffer) {
+         free(frame->chromaB.dataBuffer);
+        frame->chromaB.dataBuffer=NULL;
+    }
+    if (frame) {
+        free(frame);
+        frame=NULL;
+    }
+  
 
 }
 

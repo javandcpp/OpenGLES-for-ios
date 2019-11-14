@@ -19,6 +19,7 @@ extern "C"{
 #include <iostream>
 #include "FFmpegAudioDecode.hpp"
 #include "FFmpegVideoDecode.hpp"
+#include "AudioResample.hpp"
 
 class FFmpegDemux{
     
@@ -31,26 +32,39 @@ public:
     
     std::string url;
     
-    int audioStreamIdx=-1;
-    
-    int videoStreamIdx=-1;
-//
-    FFmpegAudioDecode *ffmpegAudioDecode=nullptr;
-
-    FFmpegVideoDecode *ffmpegVideoDecode=nullptr;
-    
-    
-    AVCodecContext *audioCodecContext=nullptr;
-
-    AVCodecContext *videoCodecContext=nullptr;
-
     void start(std::string url);
-
+    
     void notifyDecode(AVPacket avPacket);
     
     void addVideoDecode(FFmpegVideoDecode *decode);
     void addAudioDecode(FFmpegAudioDecode *decode);
     
+    AVCodecParameters* getAudioCodecParameters();
+    
+    void addAudioResample(AudioResample *audioResample);
+    
+    int audioStreamIdx=-1;
+    
+    int videoStreamIdx=-1;
+    
+    AudioResample *audioResample=nullptr;
+    
+
+  
+//
+    FFmpegAudioDecode *ffmpegAudioDecode=nullptr;
+
+    FFmpegVideoDecode *ffmpegVideoDecode=nullptr;
+    
+    AVStream *videoStream=nullptr;
+    
+    AVStream *audioStream=nullptr;
+    
+    AVCodecContext *audioCodecContext=nullptr;
+
+    AVCodecContext *videoCodecContext=nullptr;
+
+  
 };
 
 #endif /* FFmpegDemux_hpp */

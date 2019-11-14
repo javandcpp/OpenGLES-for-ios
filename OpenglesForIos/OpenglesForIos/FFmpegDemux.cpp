@@ -33,6 +33,10 @@ static int callBack(void *p){
 void ffmpegDemux(const void* obj){
 
     FFmpegDemux *ffmpegDemux=(FFmpegDemux*)obj;
+    
+    AVStream *audioStream=ffmpegDemux->audioStream;
+    AVStream *videoStream=ffmpegDemux->videoStream;
+    
     int ret=0;
     AVFormatContext *avFormatCtx=avformat_alloc_context();
     AVDictionary *opt=NULL;
@@ -64,8 +68,7 @@ void ffmpegDemux(const void* obj){
     ffmpegDemux->audioStreamIdx=asIndex;
     ffmpegDemux->videoStreamIdx=vsIndex;
     
-    AVStream *videoStream=nullptr;
-    AVStream *audioStream=nullptr;
+  
     if(asIndex>=0){
         AVCodec* audioCodec=avcodec_find_decoder(avFormatCtx->streams[asIndex]->codecpar->codec_id);
        ffmpegDemux->audioCodecContext=avcodec_alloc_context3(audioCodec);
@@ -102,6 +105,10 @@ void ffmpegDemux(const void* obj){
     AVCodec *videoCodec=nullptr;
     if (audioStream) {
          audioCodec=avcodec_find_decoder(audioStream->codecpar->codec_id);
+        
+        if(ffmpegDemux->audioResample){
+            ffmpegDemux->audioResample->initAudioResample(audioStream->codecpar);
+        }
     }
    
     if (videoStream) {
@@ -160,4 +167,16 @@ void FFmpegDemux::start(std::string url){
     this->url=url;
     std::thread t1(ffmpegDemux,this);
     t1.detach();
+}
+
+AVCodecParameters* FFmpegDemux::getAudioCodecParameters(){
+    if(audioStream){
+        return audioStream->codecpar;
+    }
+    
+    return NULL;
+}
+
+void FFmpegDemux::addAudioResample(AudioResample *audioResample){
+    this->audioResample=audioResample;
 }

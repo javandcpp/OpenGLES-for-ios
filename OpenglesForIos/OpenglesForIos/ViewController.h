@@ -12,7 +12,7 @@
 #include "FFmpegDemux.hpp"
 #include "FFmpegAudioDecode.hpp"
 #include "FFmpegVideoDecode.hpp"
-
+#include "AudioResample.hpp"
 #include "OpenglView.h"
 
 @interface ViewController : UIViewController

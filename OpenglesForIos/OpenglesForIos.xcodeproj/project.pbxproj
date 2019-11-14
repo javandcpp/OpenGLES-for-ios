@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DF26CEB323692F4800455B30 /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF26CEB223692F4800455B30 /* libopus.a */; };
+		DF26CEB62369415200455B30 /* AudioResample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEB42369415200455B30 /* AudioResample.cpp */; };
+		DF3259F1236ACE0E006468E3 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3259F0236ACE0E006468E3 /* libSDL2.a */; };
+		DF3259F4236AD0A3006468E3 /* SDLAUDIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF3259F2236AD0A3006468E3 /* SDLAUDIO.cpp */; };
 		DF7A544123669D8900F560A8 /* OpenglesForIos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF7A543F23669D8900F560A8 /* OpenglesForIos.xcdatamodeld */; };
 		DF7A544323669D8A00F560A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A544223669D8A00F560A8 /* Assets.xcassets */; };
 		DF7A544923669D8A00F560A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A544823669D8A00F560A8 /* main.m */; };
@@ -67,6 +70,11 @@
 
 /* Begin PBXFileReference section */
 		DF26CEB223692F4800455B30 /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = OpenglesForIos/lib/libopus.a; sourceTree = "<group>"; };
+		DF26CEB42369415200455B30 /* AudioResample.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AudioResample.cpp; sourceTree = "<group>"; };
+		DF26CEB52369415200455B30 /* AudioResample.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AudioResample.hpp; sourceTree = "<group>"; };
+		DF3259F0236ACE0E006468E3 /* libSDL2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDL2.a; path = OpenglesForIos/lib/libSDL2.a; sourceTree = "<group>"; };
+		DF3259F2236AD0A3006468E3 /* SDLAUDIO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SDLAUDIO.cpp; sourceTree = "<group>"; };
+		DF3259F3236AD0A3006468E3 /* SDLAUDIO.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SDLAUDIO.hpp; sourceTree = "<group>"; };
 		DF7A543323669D8800F560A8 /* OpenglesForIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenglesForIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A544023669D8900F560A8 /* OpenglesForIos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenglesForIos.xcdatamodel; sourceTree = "<group>"; };
 		DF7A544223669D8A00F560A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3259F1236ACE0E006468E3 /* libSDL2.a in Frameworks */,
 				DF26CEB323692F4800455B30 /* libopus.a in Frameworks */,
 				DF8E15E22366DA9E00CF305C /* CoreData.framework in Frameworks */,
 				DF8E15892366D4F600CF305C /* QuartzCore.framework in Frameworks */,
@@ -219,6 +228,10 @@
 				DF8E158A2366D5B800CF305C /* ViewController.h */,
 				DF8E158B2366D5B800CF305C /* ViewController.m */,
 				DF8E158F2366D78100CF305C /* View.xib */,
+				DF26CEB42369415200455B30 /* AudioResample.cpp */,
+				DF26CEB52369415200455B30 /* AudioResample.hpp */,
+				DF3259F2236AD0A3006468E3 /* SDLAUDIO.cpp */,
+				DF3259F3236AD0A3006468E3 /* SDLAUDIO.hpp */,
 			);
 			path = OpenglesForIos;
 			sourceTree = "<group>";
@@ -244,6 +257,7 @@
 		DF7A54792366B7E600F560A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF3259F0236ACE0E006468E3 /* libSDL2.a */,
 				DF26CEB223692F4800455B30 /* libopus.a */,
 				DF8E15E12366DA9E00CF305C /* CoreData.framework */,
 				DF8E15882366D4F600CF305C /* QuartzCore.framework */,
@@ -411,8 +425,10 @@
 				DF8E15DD2366DA4900CF305C /* AppDelegate.m in Sources */,
 				DF7A544923669D8A00F560A8 /* main.m in Sources */,
 				DF8E158C2366D5B800CF305C /* ViewController.m in Sources */,
+				DF26CEB62369415200455B30 /* AudioResample.cpp in Sources */,
 				DF8E15752366CD8800CF305C /* MediaInit.cpp in Sources */,
 				DF8E157C2366CF5A00CF305C /* OpenglView.m in Sources */,
+				DF3259F4236AD0A3006468E3 /* SDLAUDIO.cpp in Sources */,
 				DF8E15762366CD8800CF305C /* FFmpegVideoDecode.cpp in Sources */,
 				DF7A544123669D8900F560A8 /* OpenglesForIos.xcdatamodeld in Sources */,
 			);

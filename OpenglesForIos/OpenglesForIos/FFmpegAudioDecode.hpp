@@ -9,6 +9,8 @@
 #ifndef VideoDecode_hpp
 #define VideoDecode_hpp
 
+#include "AudioResample.hpp"
+
 #include <stdio.h>
 
 #ifdef __cplusplus
@@ -16,6 +18,7 @@
 extern "C"{
 #include "libavformat/avformat.h"
 #include "libavcodec/avcodec.h"
+#include "libswresample/swresample.h"
 }
 
 #endif
@@ -36,7 +39,13 @@ public:
     
     void setAVCodecContext(AVCodecContext *avcodecContext);
     
+    void addAudioResample(AudioResample *audioResample);
+    
     AVFrame *avFrame=nullptr;
+    
+    FILE *file=nullptr;
+    
+    AudioResample *audioResample=nullptr;
     
 };
 

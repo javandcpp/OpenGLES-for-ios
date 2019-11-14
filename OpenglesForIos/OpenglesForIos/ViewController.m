@@ -17,7 +17,7 @@
     FFmpegDemux *ffmpegDemux;
     FFmpegVideoDecode *ffmpegVideoDecode;
     FFmpegAudioDecode *ffmpegAudioDecode;
-    
+    AudioResample *audioResample;
     OpenglView *openglview;
 }
 @end
@@ -34,6 +34,10 @@
     
   
     ffmpegDemux=new FFmpegDemux;
+    audioResample=new AudioResample;
+  
+    
+
     
     ffmpegVideoDecode=new FFmpegVideoDecode;
     ffmpegAudioDecode=new FFmpegAudioDecode;
@@ -43,6 +47,9 @@
     ffmpegDemux->addAudioDecode(ffmpegAudioDecode);
     ffmpegDemux->addVideoDecode(ffmpegVideoDecode);
     
+    ffmpegDemux->addAudioResample(audioResample);
+    ffmpegAudioDecode->addAudioResample(audioResample);
+    
 
     
     
@@ -51,7 +58,8 @@
     //
     //    ffmpegVideoDecode->addOpenglVideoRender(openglRender);
 //    https://cdn.kaishuhezi.com/kstory/microcourse/video/c09784ce-b35e-4c1d-a64d-bed13b345673.mp4
-    ffmpegDemux->start("https://cdn.kaishuhezi.com/kstory/microcourse/video/c09784ce-b35e-4c1d-a64d-bed13b345673.mp4");
+    ffmpegDemux->start("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
+  
     //    openglRender->start();
     
     
@@ -74,6 +82,7 @@
         delete ffmpegDemux;
         delete ffmpegAudioDecode;
         delete ffmpegVideoDecode;
+        delete audioResample;
 }
 
 @end

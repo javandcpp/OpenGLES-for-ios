@@ -510,6 +510,8 @@ TexCoordOut = TexCoordIn;\
     }
     int w = frame->width;
     int h = frame->height;
+    
+   
     //加互斥锁,防止其他线程访问
     @synchronized (self) {
         
@@ -518,9 +520,21 @@ TexCoordOut = TexCoordIn;\
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                CGFloat screenWidth=self.window.screen.bounds.size.width;
-                CGFloat scale= screenWidth>w?w/screenWidth:screenWidth/w;
-                  [self setFrame:CGRectMake(0, 0, w*scale, h*scale)];
+                CGFloat screenW=self.window.screen.bounds.size.width;
+                CGFloat screenH=self.window.screen.bounds.size.height;
+                
+                if (screenW>screenH) {
+                    //横向
+                     [self setFrame:CGRectMake(0, 0, screenW, screenH)];
+                }else{
+                    //纵向
+                    CGFloat screenWidth=self.window.screen.bounds.size.width;
+                    CGFloat scale= screenWidth>w?w/screenWidth:screenWidth/w;
+                    [self setFrame:CGRectMake(0, 0, w*scale, h*scale)];
+                }
+                
+                
+              
             });
             
             
