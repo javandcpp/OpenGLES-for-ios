@@ -10,6 +10,9 @@
 
 
 
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+
 
 
 @interface ViewController ()
@@ -19,6 +22,7 @@
     FFmpegAudioDecode *ffmpegAudioDecode;
     AudioResample *audioResample;
     OpenglView *openglview;
+    UIButton *btnPlay;
 }
 @end
 
@@ -31,6 +35,12 @@
     
 //    [openglview setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:openglview];
+    
+    btnPlay=[[UIButton alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-100)-10, SCREEN_HEIGHT-60, 100, 40)];
+    [btnPlay setTitle:@"rotate" forState:UIControlStateNormal];
+    [btnPlay setBackgroundColor:[UIColor blackColor]];
+    
+     [btnPlay addTarget:self action:@selector(rotate) forControlEvents:UIControlEventTouchUpInside];
     
   
     ffmpegDemux=new FFmpegDemux;
@@ -53,20 +63,48 @@
 
     
     
-    //    OpenGLRender *openglRender=new OpenGLRender;
-    //    openglRender->openglInit();
+//        OpenGLRender *openglRender=new OpenGLRender;
+//        openglRender->openglInit();
     //
-    //    ffmpegVideoDecode->addOpenglVideoRender(openglRender);
+//        ffmpegVideoDecode->addOpenglVideoRender(openglRender);
 //    https://cdn.kaishuhezi.com/kstory/microcourse/video/c09784ce-b35e-4c1d-a64d-bed13b345673.mp4
-    ffmpegDemux->start("https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
+    ffmpegDemux->start("https://cdn.kaishuhezi.com/kstory/microcourse/video/c09784ce-b35e-4c1d-a64d-bed13b345673.mp4");
   
-    //    openglRender->start();
+//        openglRender->start();
+    
+    [self.view addSubview:btnPlay];
     
     
 //    using namespace std;
     
     // Do any additional setup after loading the view.
 }
+
+-(void)rotate{
+    
+    //    self.player.currentPlaybackTime = self.player.duration * 0.59;
+    //    self.view.frame = cgr
+    [UIView animateWithDuration:0.3 animations:^{
+        openglview.frame = CGRectMake(0, 0, 640, 480);
+        [self.view layoutIfNeeded];
+        [self _interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+    }];
+    
+    
+}
+
+- (void)_interfaceOrientation:(UIInterfaceOrientation)orientation {
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        NSInteger val = orientation;
+        [invocation setArgument:&val atIndex:2];
+        [invocation invoke];
+    }
+}
+
 
 /*
 #pragma mark - Navigation

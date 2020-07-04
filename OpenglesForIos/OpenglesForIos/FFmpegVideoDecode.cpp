@@ -36,17 +36,26 @@ FFmpegVideoDecode::~FFmpegVideoDecode(){
 void FFmpegVideoDecode::decode(AVPacket avPacket){
     printf("decode video stream index=%d \n",avPacket.stream_index);
     int got_picture=0;
-    
+   
+   
+   
     int ret=avcodec_decode_video2(avCodecContext, avFrame, &got_picture, &avPacket);
     if (ret<0) {
         printf("avcodec_decode_video2 error! \n");
     }
+    static struct timeval start;
     
-   
     
     if (got_picture) {
         printf("avcodec_decode_video2 decode :%d  width:%d height:%d\n",got_picture,avFrame->width,avFrame->height);
+       
     }
+    
+    
+    
+   
+  
+    
    
     H264YUV_Frame *frame=(H264YUV_Frame*)malloc(sizeof(H264YUV_Frame));
     switch (avFrame->format) {
@@ -87,6 +96,7 @@ void FFmpegVideoDecode::decode(AVPacket avPacket){
 
             
             [this->openGLRender displayYUV420pData:frame];
+            
 //                [this->openGLRender displayYUV420pData(NULL)];
             
             

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF26CEB323692F4800455B30 /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF26CEB223692F4800455B30 /* libopus.a */; };
 		DF26CEB62369415200455B30 /* AudioResample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF26CEB42369415200455B30 /* AudioResample.cpp */; };
-		DF3259F1236ACE0E006468E3 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3259F0236ACE0E006468E3 /* libSDL2.a */; };
 		DF3259F4236AD0A3006468E3 /* SDLAUDIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF3259F2236AD0A3006468E3 /* SDLAUDIO.cpp */; };
 		DF7A544123669D8900F560A8 /* OpenglesForIos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF7A543F23669D8900F560A8 /* OpenglesForIos.xcdatamodeld */; };
 		DF7A544323669D8A00F560A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF7A544223669D8A00F560A8 /* Assets.xcassets */; };
@@ -137,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF3259F1236ACE0E006468E3 /* libSDL2.a in Frameworks */,
 				DF26CEB323692F4800455B30 /* libopus.a in Frameworks */,
 				DF8E15E22366DA9E00CF305C /* CoreData.framework in Frameworks */,
 				DF8E15892366D4F600CF305C /* QuartzCore.framework in Frameworks */,

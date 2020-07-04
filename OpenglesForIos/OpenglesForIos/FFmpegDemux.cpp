@@ -130,9 +130,13 @@ void ffmpegDemux(const void* obj){
     AVPacket avPacket;
     av_init_packet(&avPacket);
     
-
-
+    int frame_count=0;
+    struct timeval start;
     for (;;) {
+        
+        if(frame_count==0){
+            gettimeofday(&start, NULL);
+        }
         ret=av_read_frame(avFormatCtx, &avPacket);
         if (ret<0||ret==AVERROR(ENOMEM)||ret==AVERROR_EOF) {
             printf("read eof! \n");
@@ -140,7 +144,27 @@ void ffmpegDemux(const void* obj){
         }else{
             if (avPacket.stream_index==asIndex||avPacket.stream_index==vsIndex) {
                 ffmpegDemux->notifyDecode(avPacket);
+                if (avPacket.stream_index==vsIndex) {
+                    ++frame_count;
+                }
+                
             }
+        }
+        
+        usleep(10*1000);
+        
+        if (frame_count>=25) {
+            struct timeval end={0};
+            gettimeofday(&end, NULL);
+            
+            int time_interval=((end.tv_sec*1000)-(start.tv_sec*1000))+((end.tv_usec/1000)-(start.tv_usec/1000));
+            printf("decode framecount :%d  host_seconds:%d\n",frame_count,time_interval/1000);
+            if(time_interval/1000<1){
+                int mseconds=1000-time_interval;
+                usleep(mseconds*1000);
+            }
+            
+            frame_count=0;
         }
         av_packet_unref(&avPacket);
     }
